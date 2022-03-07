@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParaBank", "ParaBank\ParaBank.csproj", "{1E9B2DC4-F191-490B-B784-85B95471AB97}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1E9B2DC4-F191-490B-B784-85B95471AB97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E9B2DC4-F191-490B-B784-85B95471AB97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E9B2DC4-F191-490B-B784-85B95471AB97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E9B2DC4-F191-490B-B784-85B95471AB97}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D3C85735-629D-4F17-9F00-543A9D5281E6}
+	EndGlobalSection
+EndGlobal
