@@ -126,7 +126,6 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.DescriptionAttribute("User logins with invalid credentials")]
         [NUnit.Framework.CategoryAttribute("login")]
         [NUnit.Framework.TestCaseAttribute("test1234", "1235", null)]
-        [NUnit.Framework.TestCaseAttribute("test1235", "1234", null)]
         public void UserLoginsWithInvalidCredentials(string username, string password, string[] exampleTags)
         {
             string[] @__tags = new string[] {
