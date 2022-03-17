@@ -7,24 +7,20 @@ using System.Threading.Tasks;
 namespace ParaBank.Steps
 {
     [Binding]
-    public class ParaBankregistrationSteps
+    public class ParaBankRegistrationSteps
     {
-        private readonly ParaBankPage _page;
-        private readonly ScenarioContext _scenarioContext;
         private readonly RegistrationPage _registrationPage;
 
-        public ParaBankregistrationSteps(ParaBankPage page, ScenarioContext scenarioContext, RegistrationPage registrationPage)
+        public ParaBankRegistrationSteps(RegistrationPage registrationPage)
         {
-            _page = page;
-            _scenarioContext = scenarioContext;
             _registrationPage = registrationPage;
         }
-
-
-        [When(@"user successfully registers to ParaBank with (.*) and (.*)")]
-        public async Task WhenUserRegistersToParaBankWithAnd(string username, string password)
+        
+        
+        [When(@"user successfully registers to ParaBank with (.*) and (.*) (.*)")]
+        public async Task WhenUserRegistersToParaBankWithAnd(string username, string password, string confirmPassword)
         {
-            await _registrationPage.FillRegisterForm(username, password);
+            await _registrationPage.FillRegisterForm(username, password, confirmPassword);
         }
 
         [Then(@"user should see welcome message of (.*)")]
@@ -36,7 +32,21 @@ namespace ParaBank.Steps
         [Given(@"the user is on ParaBank registration page")]
         public async Task  GivenTheUserIsOnParaBankRegistrationPage()
         {
-            await _registrationPage.NavigateToRegistrationPage();
+            await _registrationPage.NavigateAsync();
+            // await _registrationPage.NavigateToRegistrationPage();
+        }
+
+        [When(@"user clicks Register")]
+        public async Task WhenUserClicksRegister()
+        {
+            await _registrationPage.SubmitRegister();
+        }
+
+        [When(@"user should get registration error message")]
+        [Then(@"user should get registration error message")]
+        public async Task WhenUserShouldGetRegistrationErrorMessage()
+        {
+            await _registrationPage.AssertRegisterFailed();
         }
     }
 }

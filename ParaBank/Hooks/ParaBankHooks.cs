@@ -17,7 +17,7 @@ namespace ParaBank.Hooks
         private static IPlaywright _playwright;
         private static IBrowser _browser;
 
-        [BeforeTestRun(Order = 1)]
+        [BeforeTestRun]
         public static void BeforeTestRun(IObjectContainer objectContainer)
         {
             _objectContainer = objectContainer;
@@ -28,7 +28,6 @@ namespace ParaBank.Hooks
         private static async Task StartBrowserAsync()
         {
             _playwright = await Playwright.CreateAsync();
-
             _browser = await _playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
             {
                 Headless = false,
@@ -36,8 +35,6 @@ namespace ParaBank.Hooks
 
             _objectContainer.RegisterInstanceAs(_playwright);
             _objectContainer.RegisterInstanceAs(_browser);
-            var _page = new ParaBankPage(_browser);
-            _objectContainer.RegisterInstanceAs(_page);
         }
 
 

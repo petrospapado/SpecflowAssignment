@@ -8,13 +8,13 @@ using Microsoft.Playwright;
 
 namespace ParaBank.Pages
 {
-    public class ParaBankPage : BasePage
+    public class ParaBankLoginPage : BasePage
     {
         public override string PagePath => "https://parabank.parasoft.com/parabank/index.htm";
         public override IPage _page { get; set; }
         public override IBrowser _browser { get; }
 
-        public ParaBankPage(IBrowser browser)
+        public ParaBankLoginPage(IBrowser browser)
         {
             _browser = browser;
         }
